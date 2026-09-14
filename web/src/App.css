@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #050510;
+  font-family: 'Inter', sans-serif;
+  color: #c5c6c7;
+}
+
+.app-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.hologram-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.ui-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none; /* Let clicks pass through to 3D graph */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.glass-panel {
+  background: rgba(15, 20, 30, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(102, 252, 241, 0.2);
+  border-radius: 12px;
+  pointer-events: auto; /* Re-enable clicks for the panel */
+}
+
+.top-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo h1 {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, #66fcf1, #ff007f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.controls {
+  display: flex;
+  gap: 2rem;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.glass-input, .glass-select {
+  background: rgba(5, 5, 16, 0.6);
+  border: 1px solid rgba(102, 252, 241, 0.4);
+  color: #66fcf1;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.glass-input:focus, .glass-select:focus {
+  border-color: #ff007f;
+  box-shadow: 0 0 10px rgba(255, 0, 127, 0.3);
+}
+
+.glass-btn {
+  background: rgba(102, 252, 241, 0.1);
+  border: 1px solid #66fcf1;
+  color: #66fcf1;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.glass-btn:hover {
+  background: #66fcf1;
+  color: #050510;
+  box-shadow: 0 0 15px rgba(102, 252, 241, 0.6);
+}
+
+.neon-cyan {
+  color: #66fcf1;
+  filter: drop-shadow(0 0 5px #66fcf1);
+}
+
+.neon-purple {
+  color: #b000ff;
+  filter: drop-shadow(0 0 5px #b000ff);
+}
+
+.status-panel {
+  position: absolute;
+  top: 100px;
+  left: 2rem;
+  padding: 1rem 2rem;
+}
+
+.loading-text {
+  color: #ff007f;
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0;
+  animation: pulse 1.5s infinite;
+}
+
+.error-text {
+  color: #ff5555;
+  margin: 0;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}

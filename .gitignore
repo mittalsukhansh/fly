@@ -1,0 +1,18 @@
+# Go binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Data files (Ingested & Downloaded)
+*.csv
+*.bin
+
+# Node/Web
+web/node_modules/
+web/dist/
+.env*
+.DS_Store
